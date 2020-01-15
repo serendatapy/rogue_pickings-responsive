@@ -67,16 +67,17 @@ main, nav {
 
 /*The widths are in a percentage!*/
 header {
-	height: 110px;
 	border-bottom: 3px solid #77a466;
 	margin: 0 auto;
 	background-color: brown;
+	flex-flow: wrap;
 }
 
 header h1 {
 	float: left;
 	margin: 0;
 	padding: 38px 0;
+	border-bottom: 3px solid green;
 }
 header h1 span {
 	color: #77a466;
@@ -95,6 +96,7 @@ header nav ul li {
 	font-weight: 700;
 	font-size: 0.875em;
 	padding: 0 10px;
+	line-height: 3em;
 	/*display: inline;*/
 }
 header nav ul li a{
@@ -104,26 +106,23 @@ header nav ul li a{
 main {
 	background-color: cadetblue;
 }
-/*
-nav {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}*/
 
 /*The widths are in a percentage!*/
 .top-section,
 .bottom-section {
-	/*margin: 0 auto;
+	margin: 0 auto;
 	/*clear: both;*/
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-flow: wrap;
 }
 
 .main-image {
 	height: auto;
-	/*float: left;*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 .main-image img {
 	width: 100%;
@@ -132,53 +131,69 @@ nav {
 
 .main-title {
 	height: auto;
-	/*float: left;*/
 	background-color: hotpink;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: wrap;
 }
 .main-title h3 {
 	text-align: left;
-	padding: 5px 0;
 	color: #77a466;
 }
 .main-title p {
-	padding: 0;
 	font-size: 1em;
 	line-height: 25px;
+	color: black;
+}
+
+.main-title p, h3 {
+	padding: 10px 30px;
 }
 
 .section-one,
 .section-two,
 .section-three {
-	width: 33%;
-	height: auto;
-	/*float: left;*/
-	border-top: 1px solid #eee;
+	width: 100%;
+	/*height: auto;*/
+	/*border-top: 2px solid #eee;*/
 	background-color: fuchsia;
+	/*border-bottom: 2px solid #eee;*/
+	display: flex;
+	justify-content: center;
+	/*align-items: center;*//*the sections don't need it*/
+	flex-flow: wrap;
 }
 
-.section-one h4 {
-	padding: 10px 0;
+.section-one h4, .section-two h4,
+.section-three h4 {
+	padding: 10px 30px;
+	width: 100%;
+	margin: 0 auto;
+	
+}
+
+.section-one {
+	/*border-left: 1px solid #eee;
+	border-right: 1px solid #eee;*/
+	background-color: darkcyan;
+}
+.section-two {
+	/*border-left: 1px solid #eee;
+	border-right: 1px solid #eee;*/
 	background-color: coral;
 }
 
-.section-two {
-	border-left: 1px solid #eee;
-	border-right: 1px solid #eee;
-	background-color: darkcyan;
-}
-
-.section-two h4,
-.section-three h4 {
-	padding: 10px 30px;
-}
 
 .menu {
 	list-style: none;
 	padding: 0;
 	background-color: darkolivegreen;
+	width: 100%;
+	margin: 0 auto;
 }
 .menu li {
-	padding: 10px 0;
+	padding: 10px 30px;
 	color:#77a466;
 }
 
@@ -187,12 +202,16 @@ nav {
 	font-size: 16px;
 	line-height: 21px;
 	background-color: darkslategrey;
+	width: 100%;
+	margin: 0 auto;
 }
 
 .address {
 	font-size: 1em;
 	line-height: 24px;
 	background-color: dimgray;
+	width: 100%;
+	margin: 0 auto;
 }
 
 /*The widths are in a percentage!*/
@@ -211,3 +230,73 @@ footer span {
 	color: #77a466;
 	font-size: 0.875em;
 }
+
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+/*
+   @media all and (max-width: 768px) {
+    body {
+      padding: 1em;
+    }
+}*/
+
+@media (min-width: 1024px) {
+	
+	
+	.section-one,.section-two,.section-three {
+	/*height: auto;
+	border-top: 2px solid #eee;
+	background-color: fuchsia;
+	border-bottom: 2px solid #eee;
+	display: flex;
+	justify-content: center;
+	align-items: center; /*in this case center aligning is a problem*/
+	/*flex-flow: wrap;*/
+	flex: 1 30%;
+	min-height: 250px;
+	border: none;
+}
+	
+	
+	/*
+	#div-1,
+    #div-2{
+        /* set your flex value to 1 50% */
+       /* flex: 1 45%;
+        min-height: 350px; /*to stop the boxes from changing shape*/
+       /* border-bottom: 1px dashed black;
+    }
+    #div-1 {
+        border-right: 1px dashed black;
+    }
+
+    #div-3 {
+      /* set your flex value to 1 100% */
+   /*   flex: 1 100%;
+    }
+  }*/
+
+  @media (min-width: 1200px) {
+    .flex-container {
+        max-width: 2000px;
+    }
+    #div-1,
+    #div-2,
+    #div-3{
+        /* set your flex value to 1 50% */
+        flex: 1 25%;
+        min-height: 380px; /*to stop the boxes from changing shape*/
+    }
+
+    #div-1,
+    #div-2{
+        border-right: 1px dashed black;
+        border-bottom: none;
+    }
+
+   
+  }
