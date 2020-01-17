@@ -3,10 +3,13 @@
 	src: url('../fonts/wisdom-script.otf') format('opentype');
 }
 
+
+
+/***************************MAIN STRUCTURE********************/
 html {
 	font-size: 16px;
 	background-color: #fff;
-    height: 100%;
+    height: 100%; /*take up all available space, not just content space*/
     width: 100%;
 }
 
@@ -14,19 +17,19 @@ body {
 	font-family: 'Montserrat', Helvetica, Arial, sans-serif;
 	font-size: 1em;
 	height: 100%;
-	color: hotpink;
 }
 
+/***************************FLEX CONTAINER*********************/
 .container{
-	max-width: 1200px;
-	margin: 0 auto;
 	display: flex;
-	justify-content: center;
 	align-items: center;
 	flex-flow: row wrap;
-	
+	justify-content: center;
+	max-width: 1200px;
+	margin: 0 auto;
 }
 
+/*************************SET FONT SIZES************************/
 h1,
 h2,
 h3,
@@ -51,78 +54,69 @@ h4 {
 p {
 	font-size: 0.875em;
 	line-height: 21px;
-    padding: 0 30px;
 }
+
 
 header,
 footer,
 main, nav {
-  /*set display to flex and vertically & horizontally align by setting justify-content and align-items to center*/
   display: flex;
+  align-items: center; 
+  flex-flow: wrap; 
   justify-content: center;
-  align-items: center;
-  padding: 1em;
-  width: 100%;
+  padding: 1em 0;
 }
 
-/*The widths are in a percentage!*/
+header, footer, main {
+	width: 100%;
+}
+
 header {
-	border-bottom: 3px solid #77a466;
-	margin: 0 auto;
-	background-color: brown;
-	flex-flow: wrap;
+	border-bottom: 3px solid #77a466;	
 }
 
 header h1 {
-	/*float: left;*/
+	border-bottom: 3px solid #77a466;
+	color: black;
 	margin: 0;
-	padding: 38px 0;
-	border-bottom: 3px solid green;
+	padding: 30px 0;
+	text-align: center;
 	width: 100%;
-    text-align: center;
 }
+
 header h1 span {
 	color: #77a466;
 }
 
-header nav {
-	float: right;
-	padding: 46px 0;
-}
 header nav ul {
 	margin: 0;
 	padding: 0;
 }
-header nav ul li {
-	text-transform: uppercase;
+header nav ul li {	
 	font-weight: 700;
 	font-size: 0.875em;
-	padding: 0 10px;
 	line-height: 3em;
-	/*display: inline;*/
+	padding: 0 10px;
+	text-transform: uppercase;
 }
+
 header nav ul li a{
 	text-decoration: none;
 	color:#77a466;
 }
-main {
-	background-color: cadetblue;
-}
 
-/*The widths are in a percentage!*/
 .top-section,
 .bottom-section {
-	margin: 0 auto;
-	/*clear: both;*/
+	
 	display: flex;
-	justify-content: center;
 	align-items: center;
+	justify-content: center;
 	flex-flow: wrap;
-	height: 100%;
+	margin: 0 auto;
 }
 
+/***********TOP-IMAGE SECTION************/
 .main-image {
-	height: auto;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -132,175 +126,128 @@ main {
 	border-bottom: 3px solid #77a466;
 }
 
+/***********MIDDLE-TEXT SECTION************/
 .main-title {
-	height: auto;
-	background-color: hotpink;
 	display: flex;
-	justify-content: center;
 	align-items: center;
 	flex-flow: wrap;
+	justify-content: center;
+	padding: 15px 0;
 }
+
+.main-title p, h3 {
+	padding: 10px 30px;
+	margin: 0;
+	width: 100%;
+}
+
 .main-title h3 {
-	text-align: left;
 	color: #77a466;
 }
 .main-title p {
 	font-size: 1em;
-	line-height: 25px;
+	line-height: 1.5625em;
 	color: black;
 }
 
-.main-title p, h3 {
-	padding: 5px 30px;
-}
-
+/***********BOTTOM SECTION************/
 .section-one,
 .section-two,
 .section-three {
-	width: 100%;
-	/*height: auto;*/
-	border-top: 2px solid #eee;
-	background-color: fuchsia;
-	/*border-bottom: 2px solid #eee;*/
-	/*display: flex;
-	justify-content: center;
-	/*align-items: center;*//*the sections don't need it*/
-	/*flex-flow: wrap;*/
-}
-.section-three {
-	border-bottom: 2px solid #eee;
-}
-
-.section-one h4, .section-two h4,
-.section-three h4 {
-	padding: 10px 30px;
-	width: 100%;
-	/*margin: 0 auto;*/
 	
+	border-top: 2px solid #eee;
+	padding: 10px 30px 30px;
+	width: 100%;
 }
-
-.section-one {
-	/*border-left: 1px solid #eee;
-	border-right: 1px solid #eee;*/
-	background-color: darkcyan;
-}
-.section-two {
-	/*border-left: 1px solid #eee;
-	border-right: 1px solid #eee;*/
-	background-color: coral;
-}
-
 
 .menu {
 	list-style: none;
 	padding: 0;
-	background-color: darkolivegreen;
 	width: 100%;
 	margin: 0 auto;
 }
+
 .menu li {
-	padding: 10px 30px;
+	padding: 10px 0px;
 	color:#77a466;
 }
 
 .reviews {
 	color: #333;
-	font-size: 16px;
-	line-height: 21px;
-	background-color: darkslategrey;
-	/*width: 100%;*/
+	font-size: 1em;
+	line-height: 24px;
 	margin: 0 auto;
 }
 
 .address {
 	font-size: 1em;
 	line-height: 24px;
-	background-color: dimgray;
-	/*width: 100%;*/
 	margin: 0 auto;
 }
 
-/*The widths are in a percentage!*/
+/***********FOOTER SECTION************/
+
 footer {
-	height: 50px;
-	border-top: 3px solid #eee;
-	margin: 0 auto;
-	clear: both;
-	text-align: center;
-	background-color: burlywood;
-
+	border-top: 2px solid #eee;
 }
+
 footer span {
-	font-family: 'Wisdom Script', cursive;
-	text-transform: lowercase;
 	color: #77a466;
+	font-family: 'Wisdom Script', cursive;
 	font-size: 0.875em;
+	text-transform: lowercase;
 }
 
 
 /* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
+   Media Queries for Responsive Design.
    These examples override the primary ('mobile first') styles.
-   Modify as content requires.
    ========================================================================== */
-/*
-   @media all and (max-width: 768px) {
-    body {
-      padding: 1em;
-    }
-}*/
 
 @media (min-width: 1024px) {
 	
 	.container{
-		font-size: 1.15em;
+		font-size: 1.2em; /*increase text size of all sections for bigger screens*/
 	}
 	
 	.section-one,.section-two,.section-three {
-	/*height: auto;
-	background-color: fuchsia;
-	display: flex;
-	justify-content: center;
-	align-items: center; /*in this case center aligning is a problem*/
-	/*flex-flow: wrap;*/
-	border-bottom: 2px solid #eee;
-	border-top: 2px solid #eee;
-	flex: 1 30%;
-	min-height: 250px;
-	border: none;
+		border: none;
+		border-top: 2px solid #eee;
+		flex: 1 25%; /*makes the three sections into columns when the screen is big enough*/
+		min-height: 250px; /*stops columns from changing sizes based on content*/
+	
 	}
 	.section-two {
 		border-left: 1px solid #eee;
 		border-right: 1px solid #eee;
 		}
-
-	/*header nav {
-    	font-size: 1.5em;
-	}*/
 }
 	
 
 @media (min-width: 1200px) {
 	
-	header nav ul li {	
-		display: inline;
-		/*flex: 1 60%;*/
-	}
-	header nav {
-		flex: 1 60%;
-	}
-	header h1 {	
-		display: inline;
-		flex: 1 30%;
-		border-bottom: none;
-	}
 	header {
-		flex-flow: nowrap;
 		border-bottom: none;
 	}
+	
+	header li {	
+		display: inline;
+	}
+
+	header nav {
+		flex: 1 60%; /*makes sure menu has enough space*/
+		justify-content: flex-end; /*makes nav menu align to the right*/
+	}
+
+	header h1 {	
+		flex: 1 30%; /*makes sure header doesn't take up more space than necessary*/
+		border-bottom: none;
+		text-align: left;
+	}
+
 	.main-image img {
-		/*width: 100%;*/
 		border-top: 3px solid #77a466;
 	}
+
 }
 
